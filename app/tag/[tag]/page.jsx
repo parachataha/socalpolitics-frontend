@@ -10,7 +10,18 @@ export async function generateMetadata( {params}) {
 
         if(!params) return {
             title: `#${params.tag.replaceAll("%20", " ")} Articles - SoCal Politics`,
-            description: `Read the latest #${params.tag.replaceAll("%20", " ") || "Politics"} on SoCal Politics!`
+            description: `Read the latest #${params.tag.replaceAll("%20", " ") || "Politics"} on SoCal Politics!`,
+            twitter: {
+                card: 'summary_large_image',
+                title: `${params.tag.replaceAll("%20", " ")} - SoCal Politics`,
+                description: `Read the latest #${params.tag.replaceAll("%20", " ") || "Politics"} on SoCal Politics! `,
+            },
+            openGraph: {
+                siteName: 'SoCal Politics',
+                title: `${params.tag.replaceAll("%20", " ")} - SoCal Politics`,
+                description: `Read the latest #${params.tag.replaceAll("%20", " ") || "Politics"} on SoCal Politics!`,
+                url: `https://socalpolitics.com/tag/${params.tag.replaceAll("%20", " ")}`,
+            },
         };
         return {
             title: `#${params.tag.replaceAll("%20", " ")} Articles - SoCal Politics"`, 
@@ -22,10 +33,11 @@ export async function generateMetadata( {params}) {
                 description: `Read the latest #${params.tag.replaceAll("%20", " ") || "Politics"} on SoCal Politics! `,
             },
             openGraph: {
+                siteName: 'SoCal Politics',
                 title: `${params.tag.replaceAll("%20", " ")} - SoCal Politics`,
                 description: `Read the latest #${params.tag.replaceAll("%20", " ") || "Politics"} on SoCal Politics!`,
                 url: `https://socalpolitics.com/tag/${params.tag.replaceAll("%20", " ")}`,
-              },
+            },
         }
 
     } catch (error) {

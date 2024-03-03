@@ -7,7 +7,18 @@ export async function generateMetadata( {params}) {
 
         if(!params) return {
             title: `${params.location.replaceAll("%20", " ")} - SoCal Politics`,
-            description: `Showing articles based in ${params.location.replaceAll("%20", " ")}`
+            description: `Showing articles based in ${params.location.replaceAll("%20", " ")}`,
+            twitter: {
+                card: 'summary_large_image',
+                title: `${params.query.replaceAll("%20", " ")} - SoCal Politics`,
+                description: `Showing query results for "${params.query.replaceAll("%20", " ")}" `,
+            },
+            openGraph: {
+                siteName: 'SoCal Politics',
+                title: `${params.query.replaceAll("%20", " ")} - SoCal Politics`,
+                description: `Showing query results for "${params.query.replaceAll("%20", " ")}"`,
+                url: `https://socalpolitics.com/search/${params.query.replaceAll("%20", " ")}`,
+            },
         };
         return {
             title: `Showing articles based in ${params.location.replaceAll("%20", " ")}`, 
@@ -19,10 +30,11 @@ export async function generateMetadata( {params}) {
                 description: `Showing articles based in ${params.location.replaceAll("%20", " ")}`,
             },
             openGraph: {
+                siteName: 'SoCal Politics',
                 title: `${params.location.replaceAll("%20", " ")} - SoCal Politics`,
                 description: `Showing articles based in ${params.location.replaceAll("%20", " ")}`,
                 url: `https://socalpolitics.com/location/${params.location.replaceAll("%20", " ")}`,
-              },
+            },
         }
 
     } catch (error) {

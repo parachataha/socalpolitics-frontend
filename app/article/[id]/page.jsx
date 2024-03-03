@@ -110,7 +110,30 @@ export async function generateMetadata( {params}) {
 
         if(!data) return {
             title: "Not Found - SoCal Politics",
-            description: "The page you were looking for does not exist"
+            description: "The page you were looking for does not exist",
+            twitter: {
+                card: 'summary_large_image',
+                title: `Not Found - SoCal Politics`,
+                description: `The page you were looking for does not exist`,
+                creator: '@_socalpolitics',
+                images: ["https://socalpolitics.com/cdn/images/notfound.png"],
+            },
+            openGraph: {
+                siteName: "SoCal Politics",
+                title: `Not Found - SoCal Politics`,
+                description: `The page you were looking for does not exist`,
+                url: `https://socalpolitics.com/article/${params?.id}`,
+                images: [
+                {
+                    url: "https://socalpolitics.com/cdn/images/notfound.png", 
+                    secureUrl: 'https://socalpolitics.com/cdn/images/notfound.png',
+                    width: 1200,
+                    height: 630,
+                    alt: 'Not Found',
+                  },
+                ],
+            },
+
         };
         return {
             title: `${data.title} - SoCal Politics"`, 
@@ -124,6 +147,7 @@ export async function generateMetadata( {params}) {
                 images: [data?.img || "https://socalpolitics.com/cdn/images/defaultthumb.png"],
             },
             openGraph: {
+                siteName: "SoCal Politics",
                 title: `${data?.title} - SoCal Politics`,
                 description: `Read the latest on SoCal Politics! #${data?.tag || "Politics"}`,
                 url: `https://socalpolitics.com/article/${data?.id}`,
