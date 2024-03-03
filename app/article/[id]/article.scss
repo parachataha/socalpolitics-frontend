@@ -1,0 +1,118 @@
+@import url('https://fonts.googleapis.com/css2?family=Merriweather+Sans:ital,wght@0,300..800;1,300..800&display=swap');
+
+#article {
+
+    .article-wrapper {
+        padding: 40px 10px;
+        padding-top: 0;
+        width: 100%;
+        max-width: 600px;
+        margin: 0 auto;
+        text-align: left;
+
+        header{
+            margin: inherit 20px;
+            display: block;
+            .data-tag {
+                color: var(--primary-red);
+                padding: 0px;
+                text-transform: lowercase;
+                display: inline-block;
+            }
+            .data-author {
+                color: var(--primary-red);
+                // text-transform: uppercase;
+                font-weight: 800;
+                font-family: "Merriweather Sans", sans-serif;
+                font-optical-sizing: auto;
+            }
+            .data {
+                color: var(--darker-translucent-text)
+            }
+            h1 {
+                text-align: left;
+                font-size: 2.3em;
+                font-weight: 700;
+                span.edited {
+                    color: var(--darker-translucent-text);
+                    font-size: .6em;
+                    font-weight: 600;
+                }
+            }
+            border-bottom: 2.5px solid var(--secondary-bg);
+            img {
+                margin-top: 15px;
+            }
+            p.img-desc{
+                color: var(--translucent-text);
+            }
+            .share {
+                padding-top: 10px;
+                padding-bottom: 15px;
+                .share-button svg{
+                    padding: 6px 9px;
+                    background-color: var(--secondary-bg);
+                    border-radius: 20px;
+                    font-size: 2em;
+                    margin-right: 6px;
+                    cursor: pointer;
+                }
+                .facebook svg {
+                    color: white;
+                    background-color: #316FF6;
+                }
+                .twitter svg {
+                    color: white;
+                    background-color: #14171A;
+                    padding: 5px 7px;
+                }
+                .copy svg {
+                    color: white;
+                    padding: 5px 7px;
+                    background-color: var(--primary-red);
+                }
+            }
+        }
+
+        article.body {
+            padding: 20px 40px inherit 40px;
+            margin-top: 20px;
+            span {
+                font-size: 1.035em;
+                line-height: 1.8;
+                font-family: Georgia,Times,serif;
+                font-optical-sizing: auto;
+                a {
+                    font-size: 1.035em;
+                    line-height: 1.8;
+                    font-family: Georgia,Times,serif;
+                    font-optical-sizing: auto;
+                    font-family: Georgia,Times,serif;
+                    text-decoration: underline var(--primary-red);
+                    &:hover{ 
+                        color: var(--primary-red)
+                    }
+                }
+                h2 {
+                    margin: 0; padding: 0;
+                    font-size: 1.3em
+                }
+                h3 {
+                    margin: 0; padding: 0;
+                    font-size: 1.4em
+                }
+                img {
+                    width: 100%;
+                    height: auto;
+                    object-fit: contain;
+                }
+            }
+        }
+
+    }
+
+}
+
+@media screen and (max-width: 500px) {
+
+}

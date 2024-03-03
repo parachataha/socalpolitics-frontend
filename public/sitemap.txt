@@ -1,0 +1,13 @@
+https://socalpolitics.com/
+https://socalpolitics.com/about
+https://socalpolitics.com/login
+https://socalpolitics.com/signup 
+https://socalpolitics.com/article/
+https://socalpolitics.com/article/*
+https://socalpolitics.com/search/
+https://socalpolitics.com/search/*
+https://socalpolitics.com/tag/
+https://socalpolitics.com/tag/*
+https://socalpolitics.com/location/
+https://socalpolitics.com/location/*
+https://socalpolitics.com/profile

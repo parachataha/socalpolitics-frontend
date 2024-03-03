@@ -1,0 +1,15 @@
+.page#profile {
+    a {
+        color: var(--primary-red);
+        text-decoration: underline;
+    }
+    i {
+        color: var(--translucent-text);
+    }
+    button {
+        background-color: var(--primary-red);
+        padding: 3px 5px;
+        color: white;
+        border-radius: 6px;
+    }
+}
