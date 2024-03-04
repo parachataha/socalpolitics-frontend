@@ -12,6 +12,7 @@ export const metadata = {
       description: 'Login to SoCal Politics to unlock countless new features!',
       url: 'https://socalpolitics.com/login',
       siteName: 'SoCal Politics',
+      type: "website",
     },
     twitter: {
       title: 'Login - SoCal Politics',

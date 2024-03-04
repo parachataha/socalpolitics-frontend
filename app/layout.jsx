@@ -25,12 +25,6 @@ export const metadata = {
     url: 'https://socalpolitics.com',
     siteName: 'SoCal Politics',
     images: [
-      // {
-      //   url: 'https://socalpolitics.com/cdn/imagges/fulllogo.png', // Must be an absolute URL
-      //   width: 800,
-      //   height: 600,
-      //   alt: 'SoCal Politics Logo',
-      // },
       {
         url: 'https://socalpolitics.com/cdn/images/banner.png', 
         secureUrl: 'https://socalpolitics.com/cdn/images/banner.png',

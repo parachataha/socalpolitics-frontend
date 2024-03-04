@@ -7,6 +7,7 @@ export const metadata = {
     description: 'Login to SoCal Politics to unlock countless new features!',
     metadataBase: new URL('https://socalpolitics.com/profile'),
     openGraph: {
+      type: "website",
       title: 'Your Profile - SoCal Politics',
       description: 'Login to SoCal Politics to unlock countless new features!',
       url: 'https://socalpolitics.com/profile',

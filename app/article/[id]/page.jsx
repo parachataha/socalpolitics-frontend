@@ -15,6 +15,9 @@ async function getArticle(id) {
     const res = await fetch('https://api.socalpolitics.com/article/'+id, {
         next: {
             revalidate: 0
+        },
+        headers: {
+            'Cache-Control': 'no-store'
         }
     })
     if (!res.ok) {
@@ -50,6 +53,9 @@ async function getAllArticles() {
     const res = await fetch('https://api.socalpolitics.com/articles/', {
         next: {
             revalidate: 0
+        },
+        headers: {
+            'Cache-Control': 'no-store'
         }
     })
     if (!res.ok) {
@@ -64,37 +70,26 @@ async function getAllArticles() {
     return data.data;   
 }
 
-function convertSlateDataToText(slateBody) {
+async function convertSlateDataToText(slateBody) {
     let description = '';
 
-    const body = JSON.parse(slateBody)
+    const body = await JSON.parse(slateBody);
 
-    for (const block of body) {
-        if (block.children) {
-            for (const child of block.children) {
-                if (child.text) {
-                    description += child.text.trim();
+    body.forEach((o)=>{
+        // console.log(o)
+        if (o.children) {
+            o.children.forEach(child=>{
+                if (child.children) {
+                    child.children.forEach((child2)=>{
+                        description = `${description}` + `${child2.text}`
+                    })
                 }
-                if (child.bold) {
-                    description += '**';
-                }
-                if (child.italic) {
-                    description += '*';
-                }
-                if (child.underline) {
-                    description += '<u>';
-                }
-                if (child.code) {
-                    description += '`';
-                }
-                if (block.type === 'link') {
-                    description += `[${child.text}](${block.url})`;
-                }
-            }
+            })
         }
-    }
+    })
 
-    console.log(description)
+
+    console.log(description);
 
     return description;
 }
@@ -106,7 +101,7 @@ export async function generateMetadata( {params}) {
     try { 
         
         const data = await getArticle(params.id)
-        let convertedBody = convertSlateDataToText(data.body)
+        let convertedBody = await convertSlateDataToText(data.body)
 
         if(!data) return {
             title: "Not Found - SoCal Politics",
@@ -121,6 +116,7 @@ export async function generateMetadata( {params}) {
             openGraph: {
                 siteName: "SoCal Politics",
                 title: `Not Found - SoCal Politics`,
+                type: "website",
                 description: `The page you were looking for does not exist`,
                 url: `https://socalpolitics.com/article/${params?.id}`,
                 images: [
@@ -141,14 +137,15 @@ export async function generateMetadata( {params}) {
             keywords: ["SoCal Politics", data?.tag || "politics", data?.label || "breaking news", data?.author, "Southern California"],
             twitter: {
                 card: 'summary_large_image',
-                title: `${data?.title} - SoCal Politics`,
+                title: `${data.title} - SoCal Politics`,
                 description: `Read the latest on SoCal Politics! #${data?.tag || "Politics"}`,
                 creator: '@_socalpolitics',
-                images: [data?.img || "https://socalpolitics.com/cdn/images/defaultthumb.png"],
+                images: [data.img || "https://socalpolitics.com/cdn/images/defaultthumb.png"],
             },
             openGraph: {
+                type: "website",
                 siteName: "SoCal Politics",
-                title: `${data?.title} - SoCal Politics`,
+                title: `${data.title} - SoCal Politics`,
                 description: `Read the latest on SoCal Politics! #${data?.tag || "Politics"}`,
                 url: `https://socalpolitics.com/article/${data?.id}`,
                 images: [
@@ -185,7 +182,7 @@ const Article = async ( {params} ) => {
     const data = await getArticle(params.id)
     const sameTag = await getSameTag(data?.tag, params.id)
 
-    let date = data.date.slice(0, 10) || "01-01-2024"
+    let date = data.date?.slice(0, 10) || "01-01-2024"
     let year = '2024';
     let month = '01'
     let day = '01'

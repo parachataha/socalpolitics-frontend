@@ -14,6 +14,7 @@ export async function generateMetadata( {params}) {
                 description: `Showing query results for "${params.query.replaceAll("%20", " ")}" `,
             },
             openGraph: {
+                type: "website",
                 siteName: 'SoCal Politics',
                 title: `${params.query.replaceAll("%20", " ")} - SoCal Politics`,
                 description: `Showing query results for "${params.query.replaceAll("%20", " ")}"`,
@@ -30,6 +31,7 @@ export async function generateMetadata( {params}) {
                 description: `Showing query results for "${params.query.replaceAll("%20", " ")}" `,
             },
             openGraph: {
+                type: "website",
                 siteName: 'SoCal Politics',
                 title: `${params.query.replaceAll("%20", " ")} - SoCal Politics`,
                 description: `Showing query results for "${params.query.replaceAll("%20", " ")}"`,

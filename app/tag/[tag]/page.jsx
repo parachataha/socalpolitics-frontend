@@ -17,6 +17,7 @@ export async function generateMetadata( {params}) {
                 description: `Read the latest #${params.tag.replaceAll("%20", " ") || "Politics"} on SoCal Politics! `,
             },
             openGraph: {
+                type: "website",
                 siteName: 'SoCal Politics',
                 title: `${params.tag.replaceAll("%20", " ")} - SoCal Politics`,
                 description: `Read the latest #${params.tag.replaceAll("%20", " ") || "Politics"} on SoCal Politics!`,
@@ -33,6 +34,7 @@ export async function generateMetadata( {params}) {
                 description: `Read the latest #${params.tag.replaceAll("%20", " ") || "Politics"} on SoCal Politics! `,
             },
             openGraph: {
+                type: "website",
                 siteName: 'SoCal Politics',
                 title: `${params.tag.replaceAll("%20", " ")} - SoCal Politics`,
                 description: `Read the latest #${params.tag.replaceAll("%20", " ") || "Politics"} on SoCal Politics!`,
