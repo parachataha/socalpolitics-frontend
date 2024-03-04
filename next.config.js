@@ -1,4 +1,4 @@
-const nextConfig = {
+module.exports = {
   reactStrictMode: false,
   images: {
     remotePatterns: [
@@ -6,10 +6,16 @@ const nextConfig = {
         protocol: 'https',
         hostname: 'socalpolitics.com',
         port: '',
-        pathname: '/cdn/**',
+        pathname: '/cdn/images/**',
       },
+      // {
+      //   protocol: 'https',
+      //   hostname: 'www.socalpolitics.com',
+      //   port: '',
+      //   pathname: '/cdn/**',
+      // },
     ],
   },
 };
 
-module.exports = nextConfig;
+// module.exports = nextConfig;

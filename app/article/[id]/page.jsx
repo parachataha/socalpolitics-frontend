@@ -85,11 +85,18 @@ async function convertSlateDataToText(slateBody) {
                     })
                 }
             })
+        } 
+        if (o.type == 'paragraph' || o.type == 'link' || o.type == "header-one" || o.type == "header-two") {
+            if (o.children) {
+                o.children.forEach(child=>{
+                    description = `${description}` + `${child.text}`
+                })
+            }
         }
     })
 
 
-    console.log(description);
+    // console.log(description);
 
     return description;
 }
@@ -133,12 +140,12 @@ export async function generateMetadata( {params}) {
         };
         return {
             title: `${data.title} - SoCal Politics"`, 
-            description: convertedBody,
+            description: `${convertedBody} #${data.tag || "politics"}`,
             keywords: ["SoCal Politics", data?.tag || "politics", data?.label || "breaking news", data?.author, "Southern California"],
             twitter: {
                 card: 'summary_large_image',
                 title: `${data.title} - SoCal Politics`,
-                description: `Read the latest on SoCal Politics! #${data?.tag || "Politics"}`,
+                description: `${convertedBody}`,
                 creator: '@_socalpolitics',
                 images: [data.img || "https://socalpolitics.com/cdn/images/defaultthumb.png"],
             },
@@ -146,7 +153,7 @@ export async function generateMetadata( {params}) {
                 type: "website",
                 siteName: "SoCal Politics",
                 title: `${data.title} - SoCal Politics`,
-                description: `Read the latest on SoCal Politics! #${data?.tag || "Politics"}`,
+                description: `${convertedBody}`,
                 url: `https://socalpolitics.com/article/${data?.id}`,
                 images: [
                 {

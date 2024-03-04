@@ -17,12 +17,12 @@ const LargeCard = ( {data, variant} ) => {
             <div className="main flex gap-4">
                 <CardImage data={data}/>
                 <span className="content block">
+                    <Link href={`/article/${data.id}`}> <h3> {data.title} </h3> </Link>
                     <span className="flex my-1">
                         {data.tag && <Tag variant={{classes:'text-white'}} contents={{text:data.tag, type:'tag', link:`/tag/${data.tag}`}}/>}
                         {data.location && <Tag variant={{classes:'text-white'}} contents={{text:data.location, type:'location', link:`/location/${data.location}`}}/>}
                         {data.author && <Tag variant={{classes:'text-white'}} contents={{text:data.author, type:'author', link:false}}/>}
                     </span>
-                    <Link href={`/article/${data.id}`}> <h3> {data.title} </h3> </Link>
                     {/* <Link suppressHydrationWarning={true} href={`/article/${data.id}`} className="body"> </Link> */}
                     <SlateBody data={data} trimEnd={'100px'} />
                 </span>

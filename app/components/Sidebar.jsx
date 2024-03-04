@@ -74,13 +74,7 @@ const Sidebar = ({closeSidebar}) => {
                         <li> <Link onClick={() => closeSidebar(false)} className='text-left' href='/'>Articles</Link> </li>
                         <li> <Link onClick={() => closeSidebar(false)} className='text-left' href='/tag/interview'>Interviews</Link> </li>
                         <li> <Link onClick={() => closeSidebar(false)} className='text-left' href='/tag/election'>Election Ratings</Link> </li>
-
-                        {/* {UserStore.isLoggedIn == 1 && <p className='subtitle'>User Account</p>}
-                        {UserStore.isLoggedIn == 1 && <li> <Link onClick={() => closeSidebar(false)} className='font' to='/profile'>My Account</Link> </li>}
-
-                        {UserStore.isAdmin == 1 && <p className='subtitle'>Admin Panels</p>}
-                        {UserStore.isAdmin == 1 && <li> <Link onClick={() => closeSidebar(false)} className='font' to='/create'> Create Article </Link> </li>}
-                        {UserStore.isAdmin == 1 && <li> <Link onClick={() => closeSidebar(false)} className='font' to='/admin'> Admin Dashboard </Link> </li>} */}
+                        {UserStore.isAdmin == 1 ? (<li> <Link onClick={() => closeSidebar(false)} className='text-left' to='/admin'>Admin Panel</Link> </li>) : ("")}
                     </ul>
 
                     {/* <input type="text" ref={searchRef} /> */}
