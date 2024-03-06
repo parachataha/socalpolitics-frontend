@@ -23,7 +23,7 @@ export const metadata = {
 const AdminLayout = ( {children} ) => {
 
     return ( 
-        <Main children={children}/>
+        <Main> {children} </Main>
     )
   }
 

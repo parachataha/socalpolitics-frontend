@@ -8,6 +8,8 @@ import Loading from './components/Loading'
 
 const inter = Inter({ subsets: ['latin'] })
 
+import { GoogleAnalytics } from '@next/third-parties/google'
+
 export const metadata = {
   title: 'Home - SoCal Politics',
   applicationName: 'SoCal Politics',
@@ -18,7 +20,7 @@ export const metadata = {
   favicon: 'https://socalpolitics.com/cdn/images/icon.ico',
   description: 'We are a nonpartisan news outlet dedicated to providing the best coverage on elections and politics that impact Southern California',
   metadataBase: new URL('https://socalpolitics.com'),
-  referrer: 'access-control-allow-origin',
+  referrer: 'always',
   openGraph: {
     title: 'Home - SoCal Politics',
     description: 'We are a nonpartisan news outlet dedicated to providing the best coverage on elections and politics at the local, statewide, and federal levels that have an impact on Southern California',
@@ -88,6 +90,7 @@ export default function RootLayout({ children }) {
       </head>
       <body>
 
+      <GoogleAnalytics gaId="G-HEKLYCQZRT"/>
       <MainNav />
 
       {children}

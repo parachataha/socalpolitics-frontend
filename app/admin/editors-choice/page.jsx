@@ -25,6 +25,9 @@ const EditorsChoice = () => {
                 credentials: 'include',
                 next: {
                     revalidate: 0
+                },
+                headers: {
+                    'Cache-Control': 'no-store'
                 }
             })
             if (!res.ok) {

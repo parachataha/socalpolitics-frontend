@@ -107,7 +107,7 @@ const Admin = () => {
                                 <div className="actions flex">
                                     <Link href={`/update/${a.id}`}> <FaEdit className='edit'/> </Link>
                                     <Link href={`/article/${a.id}`}> <FaLink /> </Link>
-                                    {a.public === 0 ? (<FaEye className='public' onClick={privateArticle.bind(null, a?.id)}/>) : (<FaEyeSlash className='public' onClick={privateArticle.bind(null, a?.id)}/>)}
+                                    <FaEyeSlash className='public' onClick={privateArticle.bind(null, a?.id)}/>
                                 </div>
                             </div>
                         })}

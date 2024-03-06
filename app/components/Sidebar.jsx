@@ -74,7 +74,7 @@ const Sidebar = ({closeSidebar}) => {
                         <li> <Link onClick={() => closeSidebar(false)} className='text-left' href='/'>Articles</Link> </li>
                         <li> <Link onClick={() => closeSidebar(false)} className='text-left' href='/tag/interview'>Interviews</Link> </li>
                         <li> <Link onClick={() => closeSidebar(false)} className='text-left' href='/tag/election'>Election Ratings</Link> </li>
-                        {UserStore.isAdmin == 1 ? (<li> <Link onClick={() => closeSidebar(false)} className='text-left' to='/admin'>Admin Panel</Link> </li>) : ("")}
+                        {UserStore.isAdmin == true ? (<li> <Link onClick={() => closeSidebar(false)} className='text-left' href='/admin'>Admin Panel</Link> </li>) : ("")}
                     </ul>
 
                     {/* <input type="text" ref={searchRef} /> */}

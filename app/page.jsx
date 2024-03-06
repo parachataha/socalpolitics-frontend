@@ -64,6 +64,9 @@ async function getEditorsChoice() {
     const res = await fetch('https://api.socalpolitics.com/editors-choice', {
         next: {
             revalidate: 0
+        },
+        headers: {
+          'Cache-Control': 'no-store'
         }
     })
     if (!res.ok) throw new Error('error fetching editors-choice!')

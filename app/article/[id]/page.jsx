@@ -139,12 +139,12 @@ export async function generateMetadata( {params}) {
 
         };
         return {
-            title: `${data.title} - SoCal Politics"`, 
+            title: `${data.title}"`, 
             description: `${convertedBody} #${data.tag || "politics"}`,
             keywords: ["SoCal Politics", data?.tag || "politics", data?.label || "breaking news", data?.author, "Southern California"],
             twitter: {
                 card: 'summary_large_image',
-                title: `${data.title} - SoCal Politics`,
+                title: `${data.title}`,
                 description: `${convertedBody}`,
                 creator: '@_socalpolitics',
                 images: [data.img || "https://socalpolitics.com/cdn/images/defaultthumb.png"],
@@ -152,7 +152,7 @@ export async function generateMetadata( {params}) {
             openGraph: {
                 type: "website",
                 siteName: "SoCal Politics",
-                title: `${data.title} - SoCal Politics`,
+                title: `${data.title}`,
                 description: `${convertedBody}`,
                 url: `https://socalpolitics.com/article/${data?.id}`,
                 images: [

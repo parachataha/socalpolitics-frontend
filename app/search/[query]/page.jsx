@@ -52,6 +52,9 @@ async function getArticles(id) {
     const res = await fetch('https://api.socalpolitics.com/search/'+id, {
         next: {
             revalidate: 60 * 3
+        },
+        headers: {
+            'Cache-Control': 'no-store'
         }
     })
     if (!res.ok) {

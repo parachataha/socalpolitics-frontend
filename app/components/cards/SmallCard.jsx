@@ -11,6 +11,7 @@ const SmallCard = ( {data, variant} ) => {
                 <div className="flex tags">
                     {data.tag && <Tag variant={{classes: variant?.tagClasses || '', styles: variant?.tagStyles || '' }} contents={{text:data.tag, type:'tag', link:`/tag/${data.tag}`}}/>}
                     {data.location && <Tag variant={{classes: variant?.tagClasses || '', styles: variant?.tagStyles || '' }} contents={{text:data.location, type:'location', link:`/location/${data.location}`}}/>}
+                    {data.featured == true && <Tag contents={{text: "✨"}} />}
                 </div>
                 <Link href={`/article/${data.id}`} className="content">
                     <h3 className="pt-1"> {data.title} </h3>

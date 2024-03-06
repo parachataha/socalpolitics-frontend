@@ -55,6 +55,9 @@ async function getArticles(tag) {
     const res = await fetch('https://api.socalpolitics.com/tag/'+tag, {
         next: {
             revalidate: 60 * 3 * 0
+        },
+        headers: {
+            'Cache-Control': 'no-store'
         }
     })
     if (!res.ok) {

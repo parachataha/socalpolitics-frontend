@@ -11,7 +11,8 @@ const CardImage = ( {data} ) => {
     const handleImageError = async () => {
         setImg(data.img)
         try {
-            if (!img.includes("https://socalpolitics.com/cdn/images/")) {
+            if (!img.includes("https://socalpolitics.com/cdn/")) {
+                console.log('not in cdn:', data?.img)
                 throw new Error("Not in CDN")
             }
             new URL(data.img);

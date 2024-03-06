@@ -114,5 +114,14 @@
 }
 
 @media screen and (max-width: 500px) {
-
+    #article {
+        .article-wrapper { 
+            padding: 0px 5px 40px 5px;
+            .container {
+                h1 {
+                   font-size: 2em; 
+                }
+            }
+        }
+    }
 }

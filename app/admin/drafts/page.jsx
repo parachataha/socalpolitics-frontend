@@ -19,7 +19,10 @@ const Admin = () => {
                 credentials: 'include',
                 next: {
                     revalidate: 0
-                }
+                }, 
+                headers: {
+                    'Cache-Control': 'no-store'
+                  }
             })
             if (!res.ok) {
                 return {success: false, msg: 'An unexpected error occurred'}
@@ -110,7 +113,7 @@ const Admin = () => {
                         <div className="actions flex">
                             <Link href={`/update/${a.id}`}> <FaEdit className='edit'/> </Link>
                             <Link href={`/article/${a.id}`}> <FaLink /> </Link>
-                            {a.public === 0 ? (<FaEye className='public' onClick={publicArticle.bind(null, a?.id)}/>) : (<FaEyeSlash className='public'/>)}
+                            <FaEye className='public' onClick={publicArticle.bind(null, a?.id)}/>
                         </div>
                     </div>
                 })}

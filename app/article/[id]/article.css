@@ -105,3 +105,12 @@
   height: auto;
   object-fit: contain;
 }
+
+@media screen and (max-width: 500px) {
+  #article .article-wrapper {
+    padding: 0px 5px 40px 5px;
+  }
+  #article .article-wrapper .container h1 {
+    font-size: 2em;
+  }
+}
