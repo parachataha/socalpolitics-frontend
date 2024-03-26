@@ -1,6 +1,12 @@
+# About SoCalPolitics-Frontend
+This repo used to be the source code for [SoCal Politics](https://socalpolitics.com). Which is now shut down. It was a news website dedicated to providing  nonpartisan stories on Southern California USA news. The website was coded by @parachataha on Github (me) and was coded with NextJS, React and SCSS. The frontend was connected to an express backend, which was connected to a mySQL database and CDN system. The backend code is currenlty private.
+
+SoCal Politics was a client of Taha Paracha (me), but have shut down. Learn more [here (SoCal Politics Github orginization)](https://github.com/SoCal-Politics).
+
+## Get started to NextJS
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
-## Getting Started
+### Getting Started
 
 First, run the development server:
 
@@ -18,7 +24,7 @@ You can start editing the page by modifying `app/page.js`. The page auto-updates
 
 This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
 
-## Learn More
+### Learn More
 
 To learn more about Next.js, take a look at the following resources:
 
@@ -27,7 +33,7 @@ To learn more about Next.js, take a look at the following resources:
 
 You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
 
-## Deploy on Vercel
+### Deploy on Vercel
 
 The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
 
