@@ -3,7 +3,7 @@ This repo used to be the source code for [SoCal Politics](https://socalpolitics.
 <br/></br>
 It was a news website dedicated to providing  nonpartisan stories on Southern California USA news.
 <br/><br/>
-The website was coded by @parachataha on Github (me) and was coded with NextJS, React and SCSS. The frontend was connected to an express backend, which was connected to a mySQL database and CDN system. The backend code is currenlty private.
+The website was coded by @parachataha on Github (me) and was coded with NextJS, React and SCSS. The frontend was connected to an express backend, which was connected to a mySQL database and CDN system. The backend code can be found here [here](https://github.com/parachataha/socalpolitics-backend) .
 <br/><br/>
 SoCal Politics was a client of Taha Paracha (me), but have shut down. Learn more [here (SoCal Politics Github orginization)](https://github.com/SoCal-Politics).
 
